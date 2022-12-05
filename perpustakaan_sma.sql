@@ -1,89 +1,67 @@
--- phpMyAdmin SQL Dump
--- version 4.9.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 04 Des 2022 pada 17.15
--- Versi server: 10.4.8-MariaDB
--- Versi PHP: 7.3.10
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+Source Server         : Zoey
+Source Server Version : 100408
+Source Host           : localhost:3306
+Source Database       : perpustakaan_sma
 
+Target Server Type    : MYSQL
+Target Server Version : 100408
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+Date: 2022-12-04 23:42:06
+*/
 
---
--- Database: `perpustakaan_sma`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Table structure for anggota
+-- ----------------------------
+DROP TABLE IF EXISTS `anggota`;
+CREATE TABLE `anggota` (
+  `id_anggota` int(20) NOT NULL,
+  `nama` char(20) DEFAULT NULL,
+  `jenis_kelamin` varchar(20) DEFAULT NULL,
+  `no_telp` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_anggota`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Struktur dari tabel `buku`
---
+-- ----------------------------
+-- Records of anggota
+-- ----------------------------
 
+-- ----------------------------
+-- Table structure for buku
+-- ----------------------------
+DROP TABLE IF EXISTS `buku`;
 CREATE TABLE `buku` (
-  `id_buku` int(20) NOT NULL,
+  `id_buku` int(20) NOT NULL AUTO_INCREMENT,
   `judul_buku` varchar(20) NOT NULL,
   `kategori_buku` varchar(20) NOT NULL,
   `penerbit_buku` varchar(20) NOT NULL,
   `pengarang_buku` varchar(20) NOT NULL,
-  `tahun_buku` date NOT NULL
+  `tahun_buku` date NOT NULL,
+  PRIMARY KEY (`id_buku`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of buku
+-- ----------------------------
 
---
--- Struktur dari tabel `petugas`
---
-
+-- ----------------------------
+-- Table structure for petugas
+-- ----------------------------
+DROP TABLE IF EXISTS `petugas`;
 CREATE TABLE `petugas` (
-  `no_petugas` int(20) NOT NULL,
+  `no_petugas` int(20) NOT NULL AUTO_INCREMENT,
   `nama` char(20) NOT NULL,
   `jabatan` varchar(20) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`no_petugas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Indexes for dumped tables
---
-
---
--- Indeks untuk tabel `buku`
---
-ALTER TABLE `buku`
-  ADD PRIMARY KEY (`id_buku`);
-
---
--- Indeks untuk tabel `petugas`
---
-ALTER TABLE `petugas`
-  ADD PRIMARY KEY (`no_petugas`);
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
---
-
---
--- AUTO_INCREMENT untuk tabel `buku`
---
-ALTER TABLE `buku`
-  MODIFY `id_buku` int(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `petugas`
---
-ALTER TABLE `petugas`
-  MODIFY `no_petugas` int(20) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of petugas
+-- ----------------------------
