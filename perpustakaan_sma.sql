@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Des 2022 pada 17.08
+-- Waktu pembuatan: 04 Des 2022 pada 17.15
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -37,6 +37,20 @@ CREATE TABLE `buku` (
   `tahun_buku` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `petugas`
+--
+
+CREATE TABLE `petugas` (
+  `no_petugas` int(20) NOT NULL,
+  `nama` char(20) NOT NULL,
+  `jabatan` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -48,6 +62,12 @@ ALTER TABLE `buku`
   ADD PRIMARY KEY (`id_buku`);
 
 --
+-- Indeks untuk tabel `petugas`
+--
+ALTER TABLE `petugas`
+  ADD PRIMARY KEY (`no_petugas`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -56,6 +76,12 @@ ALTER TABLE `buku`
 --
 ALTER TABLE `buku`
   MODIFY `id_buku` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `petugas`
+--
+ALTER TABLE `petugas`
+  MODIFY `no_petugas` int(20) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
