@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100408
 File Encoding         : 65001
 
-Date: 2022-12-04 23:42:06
+Date: 2022-12-05 00:45:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -47,6 +47,21 @@ CREATE TABLE `buku` (
 
 -- ----------------------------
 -- Records of buku
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for peminjaman
+-- ----------------------------
+DROP TABLE IF EXISTS `peminjaman`;
+CREATE TABLE `peminjaman` (
+  `id_peminjaman` varchar(20) NOT NULL,
+  `tgl_pinjam` date DEFAULT NULL,
+  `tgl_kembali` date DEFAULT NULL,
+  PRIMARY KEY (`id_peminjaman`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of peminjaman
 -- ----------------------------
 
 -- ----------------------------
